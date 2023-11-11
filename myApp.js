@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 app.use(helmet.hidePoweredBy())
 app.use(helmet.frameguard({
-  action : 'denny'
+  action : 'deny'
 }))
 
 app.disable('strict-transport-security');
