@@ -8,7 +8,6 @@ const api = require('./server.js');
 
 app.use(express.static('public'));
 
-//Desabilitamos X-Powered-By, este header nos permite ver en que esta desarrollado le server de la aplicacion web.
 app.use(helmet.hidePoweredBy())
 
 app.disable('strict-transport-security');
