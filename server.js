@@ -5,6 +5,8 @@
 
 var express = require("express");
 var app = express();
+const helmet = require("helmet")
+helmet.hidePoweredBy("x-powered-by")
 app.disable("x-powered-by");
 var fs = require("fs");
 var path = require("path");
