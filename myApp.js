@@ -9,7 +9,7 @@ const api = require('./server.js');
 app.use(express.static('public'));
 
 app.use(helmet.hidePoweredBy())
-app.use(helmet.fremaguard({
+app.use(helmet.frameguard({
   action : 'denny'
 }))
 
