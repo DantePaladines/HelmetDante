@@ -13,6 +13,8 @@ app.use(helmet.frameguard({
   action : 'deny'
 }))
 
+app.use(helmet.xssFilter())
+
 app.disable('strict-transport-security');
 
 app.use('/_api', api);
