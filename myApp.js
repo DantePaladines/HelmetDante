@@ -34,6 +34,13 @@ app.use(helmet.dnsPrefetchControl())
 //Solo para actulizaciones de pagina web
 app.use(helmet.noCache())
 
+app.use(helmet.contentSecurityPolicy({
+  directives : {
+    defaultSrc : ["'self'", "'helmet-dantepaladines.onrender.com'"],
+
+  }
+}))
+
 app.disable('strict-transport-security');
 
 app.use('/_api', api);
