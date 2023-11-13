@@ -24,10 +24,13 @@ app.use(helmet.ieNoOpen())
 const ninetyDaysInSeconds = 7776000
 
 app.use(helmet.hsts({
-  maxAge: ninetyDaysInSeconds, 
+  maxAge: ninetyDaysInSeconds, // hacen recordar que la pagina se debe de navegar con https de forma segura
   force: true
-
 }))
+
+app.use(helmet.dnsPrefetchControl())
+
+
 
 app.disable('strict-transport-security');
 
