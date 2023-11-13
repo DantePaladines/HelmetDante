@@ -21,6 +21,14 @@ app.use(helmet.noSniff())
 // esto sirve para segurar nuestra pagina en IE 
 app.use(helmet.ieNoOpen())
 
+const ninetyDaysInSeconds = 7776000
+
+app.use(helmet.hsts({
+  maxAge: ninetyDaysInSeconds, 
+  force: true
+
+}))
+
 app.disable('strict-transport-security');
 
 app.use('/_api', api);
