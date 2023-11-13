@@ -9,11 +9,14 @@ const api = require('./server.js');
 app.use(express.static('public'));
 
 app.use(helmet.hidePoweredBy())
+
 app.use(helmet.frameguard({
   action : 'deny'
 }))
-
+// este es utilizado para nevagadores de versiones antiguas
 app.use(helmet.xssFilter())
+
+app.use(helmet.noSniff())
 
 app.disable('strict-transport-security');
 
