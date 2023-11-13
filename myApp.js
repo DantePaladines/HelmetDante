@@ -18,6 +18,9 @@ app.use(helmet.xssFilter())
 
 app.use(helmet.noSniff())
 
+// esto sirve para segurar nuestra pagina en IE 
+app.use(helmet.ieNoOpen())
+
 app.disable('strict-transport-security');
 
 app.use('/_api', api);
