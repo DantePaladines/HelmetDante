@@ -36,7 +36,7 @@ app.use(helmet.noCache())
 
 app.use(helmet.contentSecurityPolicy({
   directives : {
-    defaultSrc : ["'self'", "'helmet-dantepaladines.onrender.com'"],
+    defaultSrc : ["'self'", "'trusted-cdn.com'"],
 
   }
 }))
