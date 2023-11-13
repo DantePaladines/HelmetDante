@@ -30,7 +30,9 @@ app.use(helmet.hsts({
 
 app.use(helmet.dnsPrefetchControl())
 
-
+//No se suele desabilitar
+//Solo para actulizaciones de pagina web
+app.use(helmet.noCache())
 
 app.disable('strict-transport-security');
 
